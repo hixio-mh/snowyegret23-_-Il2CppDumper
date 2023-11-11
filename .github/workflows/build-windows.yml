@@ -30,8 +30,14 @@ jobs:
     - name: Build Il2CppDumper
       run: msbuild Il2CppDumper/Il2CppDumper.csproj /restore /p:Configuration=Release /p:OutputType=Exe
 
-    - name: Upload Il2CppDumper
+    - name: Upload Il2CppDumper-net6.0
       uses: actions/upload-artifact@v2
       with:
-        name: Il2CppDumper-windows
+        name: Il2CppDumper-windows-net60
         path: Il2CppDumper/bin/Release/net6.0
+
+    - name: Upload Il2CppDumper-net7.0
+      uses: actions/upload-artifact@v2
+      with:
+        name: Il2CppDumper-windows-net70
+        path: Il2CppDumper/bin/Release/net7.0
